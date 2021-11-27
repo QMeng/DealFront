@@ -4,26 +4,7 @@ import { Grid } from "@material-ui/core";
 import Product from "./Product/Product";
 import useStyles from "./styles";
 
-const products = [
-  {
-    id: 1,
-    name: "MYRACK MODULAR POWER RACK",
-    description: "Power rack",
-    price: "$399.99",
-    image:
-      "https://cdn.shopify.com/s/files/1/1963/1339/products/myrack-full-front-left_270x270.jpg?",
-  },
-  {
-    id: 2,
-    name: "FORCE USA G3 ALL-IN-ONE TRAINER",
-    description: "Trainer",
-    price: "$2,199.99",
-    image:
-      "https://cdn.shopify.com/s/files/1/1963/1339/products/G3-hero_6ee54510-31cd-4807-9a87-e3900cd00533_270x270.jpg?v=1604085531",
-  },
-];
-
-const Products = () => {
+const Products = ({ products }) => {
   const classes = useStyles();
 
   return (
