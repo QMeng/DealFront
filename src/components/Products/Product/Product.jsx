@@ -22,18 +22,22 @@ const Product = ({ product }) => {
       />
       <CardContent>
         <div className={classes.cardContent}>
-          <Typography variatn="h5" gutterBottom>
+          <Typography variant="h5" gutterBottom>
             {product.name}
           </Typography>
-          <Typography variatn="h5">{product.price}</Typography>
+          <div className={classes.prices}>
+            <Typography variant="h6" className={classes.orgPrice}>
+              {product.orgPrice}
+            </Typography>
+            <Typography variant="h6">-</Typography>
+            <Typography variant="h6" className={classes.price}>{product.price}</Typography>
+          </div>
         </div>
         <Typography variant="body2" color="textSecondary">
           {product.source}
         </Typography>
         <CardActions disableSpacing className={classes.cardActions}>
-          <IconButton aria-label="View">
-            View
-          </IconButton>
+          <IconButton aria-label="Source" className={classes.button}>Details</IconButton>
         </CardActions>
       </CardContent>
     </Card>

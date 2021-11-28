@@ -23,6 +23,7 @@ async function getProductsData(filter) {
       return {
         id: Math.random().toString(),
         name: d[0],
+        orgPrice: d[1],
         price: d[2],
         image: d[3],
         url: d[4],
