@@ -5,20 +5,26 @@ import { Products, Navbar } from "./components";
 
 const App = () => {
   const [products, setProducts] = useState([]);
+  const [filterValue, setFilterValue] = useState("All");
 
-  const fetchProducts = async () => {
-    const data = await getProductsData();
+  const fetchProducts = async (filter) => {
+    const data = await getProductsData(filter);
 
     setProducts(data);
   };
 
+
   useEffect(() => {
-    fetchProducts();
-  }, []);
+    fetchProducts(filterValue);
+  }, [filterValue]);
+
+  const filterChangeHandler = (newFilter) => {
+    setFilterValue(newFilter);
+  };
 
   return (
     <div>
-      <Navbar />
+      <Navbar selectedFilter={filterValue} onFilterChange={filterChangeHandler}/>
       <Products products={products}/>
     </div>
   );
