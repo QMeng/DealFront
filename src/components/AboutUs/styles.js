@@ -1,22 +1,19 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
-  content: {
-    flexGrow: 1,
+  root: {
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(3),
+    alignItems: "center",
+    justifyContent: "center",
+    margin: "auto",
   },
-  filter: {
+  title: {
     justifyContent: "center",
     display: "flex",
     gap: "1rem",
-    paddingTop: "3rem",
+    paddingTop: "4rem",
     paddingBottom: "1rem",
     font: "helvetica",
-  },
-  title: {
-    alignItems: "center",
-    display: "flex",
-    textDecoration: "none",
   },
 }));

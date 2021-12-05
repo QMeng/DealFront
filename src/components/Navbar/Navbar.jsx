@@ -1,11 +1,23 @@
-import React from "react";
-import { AppBar, Toolbar, Typography } from "@material-ui/core";
+import React, { useState } from "react";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  ButtonGroup,
+} from "@material-ui/core";
 
 import useStyles from "./styles";
 import logo from "../../assets/dumbbell.png";
 
-const Navbar = () => {
+const Navbar = ({ onTabChange }) => {
+  const [selectedButton, setSelectedButton] = useState(1);
   const classes = useStyles();
+
+  const handleTabChange = (tab) => {
+    setSelectedButton(tab);
+    onTabChange(tab === 1, tab === 2);
+  };
 
   return (
     <>
@@ -21,6 +33,20 @@ const Navbar = () => {
             Best place to find fitness deals!
           </Typography>
           <div className={classes.grow} />
+          <ButtonGroup>
+            <Button
+              color={selectedButton === 1 ? "secondary" : "primary"}
+              onClick={() => handleTabChange(1)}
+            >
+              Equipments
+            </Button>
+            <Button
+              color={selectedButton === 2 ? "secondary" : "primary"}
+              onClick={() => handleTabChange(2)}
+            >
+              About Us & Subscribe
+            </Button>
+          </ButtonGroup>
         </Toolbar>
       </AppBar>
     </>
