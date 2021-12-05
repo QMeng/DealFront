@@ -22,28 +22,35 @@ const Product = ({ product }) => {
           image={product.image}
           title={product.name}
         />
-        <CardContent>
+        <CardContent className={classes.cardRoot}>
           <div className={classes.cardContent}>
-            <Typography variant="h6" gutterBottom>
+            <Typography variant="body1" gutterBottom>
               {product.name}
             </Typography>
             <div className={classes.prices}>
-              <Typography variant="h6" className={classes.orgPrice}>
+              <Typography variant="body1" className={classes.orgPrice}>
                 {product.orgPrice}
               </Typography>
-              <Typography variant="h6" className={classes.curPrice}>
+              <Typography variant="body1" className={classes.curPrice}>
                 {product.price}
               </Typography>
             </div>
           </div>
-          <Typography variant="body2" color="textSecondary">
+
+          <Typography variant="subtitle1" color="textSecondary">
             {product.source}
           </Typography>
+          {/*
           <CardActions disableSpacing className={classes.cardActions}>
-            <IconButton aria-label="Source" className={classes.button} href={product.url}>
+            <IconButton
+              aria-label="Source"
+              className={classes.button}
+              href={product.url}
+            >
               Details
             </IconButton>
           </CardActions>
+          */}
         </CardContent>
       </CardActionArea>
     </Card>
