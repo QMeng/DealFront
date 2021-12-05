@@ -24,15 +24,14 @@ const Product = ({ product }) => {
         />
         <CardContent>
           <div className={classes.cardContent}>
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h6" gutterBottom>
               {product.name}
             </Typography>
             <div className={classes.prices}>
               <Typography variant="h6" className={classes.orgPrice}>
                 {product.orgPrice}
               </Typography>
-              <Typography variant="h6">-</Typography>
-              <Typography variant="h6" className={classes.price}>
+              <Typography variant="h6" className={classes.curPrice}>
                 {product.price}
               </Typography>
             </div>

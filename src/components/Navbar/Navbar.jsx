@@ -18,7 +18,7 @@ const Navbar = () => {
               height="25px"
               className={classes.image}
             />
-            Your one stop place to check fitness deals!
+            One stop place to check fitness deals!
           </Typography>
           <div className={classes.grow} />
         </Toolbar>

@@ -24,7 +24,7 @@ export default makeStyles(() => ({
       orgPrice: {
         textDecoration: "line-through",
       },
-      price: {
+      curPrice: {
         color: "red"
       },
       button: {
