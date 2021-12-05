@@ -13,7 +13,7 @@ const Product = ({ product }) => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} variant="elevation">
       <CardActionArea href={product.url}>
         <CardMedia
           className={classes.media}

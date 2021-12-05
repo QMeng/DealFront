@@ -41,7 +41,7 @@ const Products = () => {
         </Select>
       </div>
 
-      <Grid container justify="center" spacing={4}>
+      <Grid container justify="left" spacing={2}>
         {products.map((product) => (
           <Grid item key={product.id} xs={12} sm={6} md={3} lg={2}>
             <Product product={product} />
