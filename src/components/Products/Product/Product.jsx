@@ -26,7 +26,7 @@ const Product = ({ product }) => {
               {product.name}
             </Typography>
             <div className={classes.prices}>
-              <Typography variant="body1" className={classes.orgPrice}>
+              <Typography variant="body2" className={classes.orgPrice}>
                 {product.orgPrice}
               </Typography>
               <Typography variant="body1" className={classes.curPrice}>

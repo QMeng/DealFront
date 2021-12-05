@@ -19,11 +19,12 @@ export default makeStyles(() => ({
       },
       prices: {
         display: "flex",
-        gap: "0.5rem",
+        gap: "3px",
       },
       orgPrice: {
         paddingLeft: "8px",
         textDecoration: "line-through",
+        color: "gray",
       },
       curPrice: {
         color: "red"
