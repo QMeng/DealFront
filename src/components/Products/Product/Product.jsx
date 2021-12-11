@@ -22,7 +22,7 @@ const Product = ({ product }) => {
         />
         <CardContent className={classes.cardRoot}>
           <div className={classes.cardContent}>
-            <Typography variant="body1" gutterBottom>
+            <Typography variant="body1" gutterBottom className={classes.title}>
               {product.name}
             </Typography>
             <div className={classes.prices}>
@@ -35,7 +35,7 @@ const Product = ({ product }) => {
             </div>
           </div>
 
-          <Typography variant="subtitle1" color="textSecondary">
+          <Typography variant="subtitle1" color="textSecondary" className={classes.source}>
             {product.source}
           </Typography>
           {/*

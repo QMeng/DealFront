@@ -37,14 +37,16 @@ const Navbar = ({ onTabChange }) => {
             <Button
               color={selectedButton === 1 ? "secondary" : "primary"}
               onClick={() => handleTabChange(1)}
+              className={classes.button}
             >
               Equipments
             </Button>
             <Button
               color={selectedButton === 2 ? "secondary" : "primary"}
               onClick={() => handleTabChange(2)}
+              className={classes.button}
             >
-              About Us & Subscribe
+              About Us
             </Button>
           </ButtonGroup>
         </Toolbar>

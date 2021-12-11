@@ -5,6 +5,7 @@ export default makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(3),
+    fontFamily: "Fira Sans",
   },
   filter: {
     justifyContent: "center",
@@ -12,11 +13,12 @@ export default makeStyles((theme) => ({
     gap: "1rem",
     paddingTop: "3rem",
     paddingBottom: "1rem",
-    font: "helvetica",
+    fontFamily: "inherit",
   },
   title: {
     alignItems: "center",
     display: "flex",
     textDecoration: "none",
+    fontFamily: "inherit",
   },
 }));

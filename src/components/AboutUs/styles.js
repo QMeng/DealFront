@@ -7,6 +7,7 @@ export default makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     margin: "auto",
+    fontFamily: "Fira Sans",
   },
   title: {
     justifyContent: "center",
@@ -14,6 +15,11 @@ export default makeStyles((theme) => ({
     gap: "1rem",
     paddingTop: "4rem",
     paddingBottom: "1rem",
-    font: "helvetica",
+    paddingLeft: "1rem",
+    fontFamily: "inherit",
+  },
+  content: {
+    justifyContent: "center",
+    fontFamily: "inherit",
   },
 }));
