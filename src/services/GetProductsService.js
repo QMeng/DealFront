@@ -55,7 +55,7 @@ function shuffleArray(array) {
   }
 }
 
-const getProductsData = async (filter) => {
+const getProductsData = async () => {
   const requestOptions = {
     method: "GET",
     headers: { "Content-Type": "application/json" },
@@ -63,13 +63,7 @@ const getProductsData = async (filter) => {
     mode: "cors",
   };
 
-  var url = "https://nkuhbsd8a9.execute-api.us-east-1.amazonaws.com/prod?";
-
-  if (filter !== "All") {
-    url = url + "source=" + filter;
-  }
-
-  const response = await fetch(url, requestOptions);
+  const response = await fetch("https://nkuhbsd8a9.execute-api.us-east-1.amazonaws.com/prod?", requestOptions);
 
   if (!response.ok) {
     throw new Error("Error getting products");

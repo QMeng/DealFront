@@ -15,7 +15,7 @@ const App = () => {
 
   useEffect(() => {
     (async () => {
-      const data = await getProductsData("All");
+      const data = await getProductsData();
       setEquipmentData(data);
     })()
   }, []);
