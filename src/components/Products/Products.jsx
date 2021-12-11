@@ -35,13 +35,16 @@ const Products = () => {
         </Typography>
         <Select value={filterValue} onChange={filterChangeHandler}>
           <MenuItem value="All">All</MenuItem>
+          <MenuItem value="Rogue Fitness">Rogue Fitness</MenuItem>
           <MenuItem value="Rep Fitness">Rep Fitness</MenuItem>
           <MenuItem value="Titan Fitness">Titan Fitness</MenuItem>
           <MenuItem value="Force USA">Force USA</MenuItem>
+          <MenuItem value="RDX Sports">RDX Sports</MenuItem>
+          <MenuItem value="Life Fitness">Life Fitness</MenuItem>
         </Select>
       </div>
 
-      <Grid container justify="left" spacing={2}>
+      <Grid container justifyContent="left" spacing={2}>
         {products.map((product) => (
           <Grid item key={product.id} xs={12} sm={6} md={3} lg={2}>
             <Product product={product} />
