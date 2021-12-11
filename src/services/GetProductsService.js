@@ -55,7 +55,7 @@ function shuffleArray(array) {
   }
 }
 
-async function getProductsData(filter) {
+const getProductsData = async (filter) => {
   const requestOptions = {
     method: "GET",
     headers: { "Content-Type": "application/json" },
@@ -69,28 +69,28 @@ async function getProductsData(filter) {
     url = url + "source=" + filter;
   }
 
-  var data = fetch(url, requestOptions)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (products) {
-      return products.map((d) => {
-        return {
-          id: Math.random().toString(),
-          name: d["name"],
-          orgPrice: d["regular_price"],
-          price: d["sale_price"],
-          image: d["img_url"],
-          url: d["href"],
-          source: d["source"],
-        };
-      });
-    });
+  const response = await fetch(url, requestOptions);
+
+  if (!response.ok) {
+    throw new Error("Error getting products");
+  }
+
+  var data = await response.json();
+
+  data = data.map((d) => {
+    return {
+      id: Math.random().toString(),
+      name: d["name"],
+      orgPrice: d["regular_price"],
+      price: d["sale_price"],
+      image: d["img_url"],
+      url: d["href"],
+      source: d["source"],
+    };
+  });
 
   shuffleArray(data);
   return data;
-}
+};
 
 export default getProductsData;
-
-//https://nkuhbsd8a9.execute-api.us-east-1.amazonaws.com/prod?source=Rogue%20Fitness

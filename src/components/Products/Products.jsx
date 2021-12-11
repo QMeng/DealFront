@@ -6,26 +6,25 @@ import { MenuItem, Typography, Select } from "@material-ui/core";
 import Product from "./Product/Product";
 import useStyles from "./styles";
 
-import getProductsData from "../../services/GetProductsService";
-
-const Products = () => {
-  const [products, setProducts] = useState([]);
+const Products = ({ products }) => {
+  const [displayProducts, setDisplayProducts] = useState([]);
   const [filterValue, setFilterValue] = useState("All");
   const classes = useStyles();
 
-  const fetchProducts = async (filter) => {
-    const data = await getProductsData(filter);
-
-    setProducts(data);
+  const filterChangeHandler = (event) => {
+    const newFilterValue = event.target.value;
+    setFilterValue(newFilterValue);
   };
 
   useEffect(() => {
-    fetchProducts(filterValue);
-  }, [filterValue]);
+    var filteredProducts = products;
 
-  const filterChangeHandler = (event) => {
-    setFilterValue(event.target.value);
-  };
+    if (filterValue !== "All") {
+      filteredProducts = products.filter((p) => p["source"] === filterValue);
+    }
+
+    setDisplayProducts(filteredProducts);
+  }, [filterValue, products])
 
   return (
     <main className={classes.content}>
@@ -44,8 +43,8 @@ const Products = () => {
         </Select>
       </div>
 
-      <Grid container justifyContent="left" spacing={2}>
-        {products.map((product) => (
+      <Grid container justify="left" spacing={2}>
+        {displayProducts.map((product) => (
           <Grid item key={product.id} xs={12} sm={6} md={3} lg={2}>
             <Product product={product} />
           </Grid>
