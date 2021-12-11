@@ -4,6 +4,7 @@ const drawerWidth = 0;
 
 export default makeStyles((theme) => ({
   appBar: {
+    fontFamily: "Fira Sans",
     boxShadow: "none",
     borderBottom: "1px solid rgba(0, 0, 0, 0.12)",
     [theme.breakpoints.up("sm")]: {
@@ -16,17 +17,15 @@ export default makeStyles((theme) => ({
     alignItems: "center",
     display: "flex",
     textDecoration: "none",
+    fontFamily: "inherit"
   },
   image: {
     marginRight: "10px",
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-    [theme.breakpoints.up("sm")]: {
-      display: "none",
-    },
-  },
   grow: {
     flexGrow: 1,
   },
+  button: {
+    fontFamily: "inherit"
+  }
 }));
